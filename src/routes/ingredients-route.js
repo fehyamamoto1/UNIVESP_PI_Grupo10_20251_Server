@@ -3,13 +3,13 @@ module.exports = app => {
     var router = require('express').Router();
 
     // Create new ingredient 
-    router.post('/ingredientes/:id', IngredientsController.create);
+    router.post('/:id', IngredientsController.create);
 
     // Get all ingredients
-    router.get('/ingredientes', IngredientsController.getAll);
+    router.get('/', IngredientsController.getAll);
 
     // Delete one ingredient 
-    router.delete('/ingredientes/:id', IngredientsController.deleteOne)
+    router.delete('/:id', IngredientsController.deleteOne)
 
-    app.use("/", router);
+    app.use("/api/ingredientes", router);
 };
