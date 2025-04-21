@@ -1,5 +1,6 @@
-const express = require("express");
+const express = require('express');
 const connectToDatabase = require('./database');
+const config = require('./config');
 
 const app = express();
 app.use(express.json());
@@ -10,7 +11,7 @@ require("./routes/ingredients-route.js")(app);
 require("./routes/menu-route.js")(app);
 require("./routes/diningtables-route.js")(app);
 
-const PORT = process.env.PORT || 3000;
+const PORT = config.port;
 
 app.listen(PORT, () => { 
     console.log(`Server is running on port ${PORT}`);
