@@ -2,7 +2,11 @@ const express = require('express');
 const connectToDatabase = require('./database');
 const config = require('./config');
 
+const cors = require('cors');
+
 const app = express();
+
+app.use(cors());
 app.use(express.json());
 
 connectToDatabase();
