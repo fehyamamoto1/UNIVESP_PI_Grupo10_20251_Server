@@ -1,43 +1,32 @@
 const mongoose = require('mongoose');
 
 const IngredientsSchema = new mongoose.Schema ({
-    itemId: {
-        type: Number,
-        required: true
+    ingredientId: {
+        type: String
     },
     quantity: {
-        type: Number,
-        required: true
+        type: Number
     },
     measurementUnit: { 
-        type: String,
-        required: true
+        type: String
     }
-});
+}, { _id: false });
 
 
 const MenuSchema = new mongoose.Schema({
-  itemId: {
-    type: Number,
-    required: true
-  },
   name: {
-    type: String,
-    required: true
+    type: String
   },
   description: {
-    type: String,
-    required: true
+    type: String
   },
-  price: {
-    type: String,
-    required: true
+  value: {
+    type: Number
   },
   ingredients: {
-    type: IngredientsSchema,
-    required: true
+    type: [IngredientsSchema],
   }
-});
+}, {versionKey: false});
 
 const Menu = mongoose.model('Menu', MenuSchema, 'Menu');
 

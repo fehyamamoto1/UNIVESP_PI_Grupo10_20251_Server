@@ -7,6 +7,8 @@ app.use(express.json());
 connectToDatabase();
 
 require("./routes/ingredients-route.js")(app);
+require("./routes/menu-route.js")(app);
+require("./routes/diningtables-route.js")(app);
 
 const PORT = process.env.PORT || 3000;
 

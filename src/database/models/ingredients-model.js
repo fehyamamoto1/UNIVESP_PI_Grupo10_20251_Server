@@ -1,23 +1,19 @@
 const mongoose = require('mongoose');
 
 const IngredientsSchema = new mongoose.Schema({
-  itemId: {
-    type: Number,
-    required: true
-  },
   name: {
-    type: String,
-    required: true
+    type: String
   },
   quantity: {
-    type: Number,
-    required: true
+    type: Number
   },
   measurementUnit: {
-    type: String,
-    required: true
+    type: String
+  },
+  alertLevel: {
+    type: Number
   }
-});
+}, {versionKey: false});
 
 const Ingredients = mongoose.model('Ingredients', IngredientsSchema, 'Ingredients');
 

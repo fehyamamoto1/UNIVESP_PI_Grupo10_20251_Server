@@ -2,14 +2,15 @@ module.exports = app => {
     const IngredientsController = require('../controllers/ingredients-controller.js');
     var router = require('express').Router();
 
-    // Create new ingredient 
-    router.post('/:id', IngredientsController.create);
+    router.post('/adicionar', IngredientsController.create);
 
-    // Get all ingredients
-    router.get('/', IngredientsController.getAll);
+    router.post('/repor/:id', IngredientsController.updateQuantity);
 
-    // Delete one ingredient 
-    router.delete('/:id', IngredientsController.deleteOne)
+    router.post('/atualizarNivelAlerta/:id', IngredientsController.updateAlertLevel);
+
+    router.get('/listarTodos', IngredientsController.getAll);
+
+    router.delete('/deletar/:id', IngredientsController.deleteOne)
 
     app.use("/api/ingredientes", router);
 };
