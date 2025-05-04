@@ -9,6 +9,9 @@ const TableItem = new mongoose.Schema({
     },
     quantity: { 
         type: Number
+    }, 
+    itemValue: {
+        type: Number
     }
 }, { _id: false });
 
