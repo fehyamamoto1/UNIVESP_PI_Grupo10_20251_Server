@@ -4,6 +4,9 @@ const TableItem = new mongoose.Schema({
     itemId: {
         type: String
     }, 
+    itemName: {
+        type: String
+    },
     quantity: { 
         type: Number
     }

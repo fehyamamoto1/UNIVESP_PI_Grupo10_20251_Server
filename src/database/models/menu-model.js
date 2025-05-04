@@ -17,6 +17,9 @@ const MenuSchema = new mongoose.Schema({
   name: {
     type: String
   },
+  imageUrl: {
+    type: String
+  },
   description: {
     type: String
   },
